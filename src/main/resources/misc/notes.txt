@@ -1,0 +1,5 @@
+
+//forking
+git remote add upstream https://github.com/n0d3-js/fitness-spring.git;
+
+git pull upstream master
