@@ -1,12 +1,15 @@
 package com.chyld.entities;
 
+import com.chyld.entities.Profile;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.context.annotation.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import javax.jws.Oneway;
 import javax.persistence.*;
 import javax.persistence.CascadeType;
 import java.util.Collection;
@@ -23,6 +26,7 @@ public class User implements UserDetails {
     private String password;
     private boolean enabled;
     private List<Role> roles;
+    private Profile profile;
     private Date created;
     private Date modified;
 
@@ -59,9 +63,14 @@ public class User implements UserDetails {
     public Date getModified() {return modified;}
     public void setModified(Date modified) {this.modified = modified;}
 
+    @OneToOne(cascade = CascadeType.DETACH, mappedBy = "user")
+    public Profile getProfile() { return profile; }
+    public void setProfile(Profile profile) {this.profile = profile; }
+
     @Override
     @Transient
     public Collection<? extends GrantedAuthority> getAuthorities() {return this.getRoles();}
+
 
     @Override
     @Transient

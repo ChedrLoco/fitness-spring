@@ -6,4 +6,4 @@ CREATE TABLE `fitness`.`users` (
   `enabled` BOOLEAN NOT NULL DEFAULT FALSE,
   `created` TIMESTAMP NOT NULL DEFAULT NOW(),
   `modified` TIMESTAMP NOT NULL DEFAULT NOW(),
-  PRIMARY KEY (`id`));
+PRIMARY KEY (`id`));
