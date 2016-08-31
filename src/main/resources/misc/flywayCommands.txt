@@ -3,6 +3,6 @@ curl -H "Content-Type: application/json" -X POST
      -D -  http://localhost:9001/api/authenticate
 
 
-gradle flywayInfo -Dflyway.user=root -Dflyway.password=pass1234
-gradle flywayClean -Dflyway.user=root -Dflyway.password=pass1234
-gradle flywayMigrate -Dflyway.user=root -Dflyway.password=pass1234
+gradle flywayInfo -Dflyway.user=root -Dflyway.password=pass@word1
+gradle flywayClean -Dflyway.user=root -Dflyway.password=pass@word1
+gradle flywayMigrate -Dflyway.user=root -Dflyway.password=pass@word1
